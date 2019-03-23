@@ -16,10 +16,10 @@ for nugget in data['results']:
 		owner = nugget.get('owner')
 		objectId = owner.get('objectId')
 		if ownerToNug.get(objectId) is not None:
-			#pprint("Found!!!!")
-			# No owner entry existed
+			# Owner entry exists. Add one to the existing count
 			ownerToNug[objectId] = ownerToNug[objectId] + 1
 		else:
+			# Ownder never existed so set count as 1
 			ownerToNug[objectId] =  1
 #		owner+=1
 	total+=1
